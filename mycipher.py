@@ -24,6 +24,8 @@ def caesar_cipher(shift):
             else:
                 # Skips a character if its not a letter 
                 continue
+
+            
         return cipher_text
 
 
