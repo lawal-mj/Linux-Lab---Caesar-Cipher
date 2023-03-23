@@ -1,3 +1,4 @@
+# imports the sys module
 import sys
 
 # function that encrypts text 
