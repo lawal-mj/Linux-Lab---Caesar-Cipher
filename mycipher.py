@@ -7,6 +7,7 @@ def caesar_cipher(shift):
         plain_text = line.strip().upper()
         cipher_text = ""
         block_count = 0
+
         for letter in plain_text:
             # makes sure only alphabets can go through 
             if letter.isalpha():
@@ -21,13 +22,11 @@ def caesar_cipher(shift):
                 if block_count == 5:
                     cipher_text += " "
                     block_count = 0
-            else:
-                # Skips a character if its not a letter 
-                continue
 
-            
+            # Skips a character if its not a letter 
+            else: continue
+
         return cipher_text
-
 
 
 # gets the shift value from the terminal
@@ -35,6 +34,9 @@ shift = int(sys.argv[1])
 cipher_text = caesar_cipher(shift)
 
 # Print the ciphertext in blocks of ten blocks per line.
-for i in range(0, len(cipher_text), 60):
+i = 0
+while i < len(cipher_text):
     print(cipher_text[i:i+60])
+    i += 60
+
 
